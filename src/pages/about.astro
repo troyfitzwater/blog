@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "About Me";
+
+const identity = {
+  firstName: "Troy",
+  country: "Corning, New York",
+  occupation: "Software Engineer",
+  hobbies: ["hiking", "skiing", "reading"]
+};
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <h1>{pageTitle}</h1>
+  <h2>... and my new Astro site!</h2>
+
+  <p>Hi! I'm {identity.firstName}, and I'm a {identity.occupation} from {identity.country}.</p>
+
+  <p>Some of my hobbies include:</p>
+  <ul>
+    {identity.hobbies.map((hobby) => <li>{hobby}</li>)}
+  </ul>
+</BaseLayout>
